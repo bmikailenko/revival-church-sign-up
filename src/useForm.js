@@ -6,27 +6,36 @@ const useForm = (callback, validate, recaptchaRef) => {
         firstName: '',
         lastName: '',
         email: '',
-        tel: ''
+        tel: '',
+        interestVocals: 'no',
+        interestInstrumental: 'no',
+        interestSound: 'no',
+        interestLights: 'no',
+        interestVideo: 'no',
+        interestPodcast: 'no',
+        memberYes: 'no',
+        memberNo: 'no',
+        summary: ''
     })
     const [errors, setErrors] = useState({})
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = e => {
         var { name, value } = e.target;
+        if (e.target.type === 'checkbox' && e.target.checked)
+            value = 'yes';
+        if (e.target.type === 'checkbox' && !e.target.checked)
+            value = 'no';
         setValues({
             ...values,
             [name]: value
         });
-
     };
 
     const handleSubmit = e => {
         e.preventDefault();
-
         const recaptchaValue = recaptchaRef.current.getValue();
-
         setErrors(validate(values, recaptchaValue));
-
         setIsSubmitting(true);
     };
 

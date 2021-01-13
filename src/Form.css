@@ -16,6 +16,7 @@
   grid-template-rows: 1fr;
   border-radius: 30px;
   align-content: center;
+  overflow: scroll;
 }
 
 .form-content-left {
@@ -28,10 +29,14 @@
 .form-content-right {
   display: flex;
   position: relative;
-  padding: 5% 5% 0% 0%;
+  padding: 0% 5% 0% 0%;
   font-size: 0.8rem;
   align-items: center;
   justify-content: center;
+}
+
+.form-inputs {
+  padding-bottom: 0px;
 }
 
 .form-img {
@@ -39,8 +44,8 @@
   height: auto;
 }
 
-.form-input-btn {
-  float: right;
+.red-text {
+  color: rgba(255, 20, 20, 0.808);
 }
 
 @media (max-width: 992px) {
