@@ -3,9 +3,9 @@
   background: linear-gradient(90deg, rgba(0,0,0,0.7973564425770308) 35%, rgba(32,61,80,1) 100%);
   color: whitesmoke;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-  position: fixed;
+  position: relative;
   margin: auto;
-  top: 0;
+  top: 5%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -13,6 +13,7 @@
   height: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   border-radius: 30px;
   align-content: center;
 }
@@ -25,9 +26,12 @@
 }
 
 .form-content-right {
+  display: flex;
   position: relative;
   padding: 5% 5% 0% 0%;
-  font-size: 0.8rem
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-img {
@@ -41,9 +45,34 @@
 
 @media (max-width: 992px) {
   .form-container{
+    overflow: auto;
     bottom: 0vh;
     width: 100%;
     height: 100%;
+    display: inline;
     border-radius: 0px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    top: 0%;
+  }
+  .form-content-right {
+    padding: 0% 5% 30% 5%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.7973564425770308) 35%, rgba(32,61,80,1) 100%);
+  }
+  .form-content-left{
+    background: linear-gradient(90deg, rgba(0,0,0,0.7973564425770308) 35%, rgba(32,61,80,1) 100%);
+  }
+  .App {
+    background-image: url(./assets/images/background-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .form-content-right {
+    font-size: 1.5rem;
   }
 }

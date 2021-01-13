@@ -41,6 +41,7 @@ const FormSignup = ({submitForm}) => {
           ref={recaptchaRef}
         /> 
         {errors.recaptcha && <p>{errors.recaptcha}</p>}
+        <br />
         <Button className='form-input-btn' type='submit'>
           Sign Up
         </Button>        
